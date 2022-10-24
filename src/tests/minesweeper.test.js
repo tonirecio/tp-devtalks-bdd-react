@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable jest/no-jasmine-globals */
 import { loadFeature, defineFeature } from 'jest-cucumber'
+import * as steps from './steps/minesweeper.steps.js'
 
 const featureFile = loadFeature('./src/features/minesweeper.core.feature', {
   errors: {
@@ -14,7 +15,7 @@ const featureFile = loadFeature('./src/features/minesweeper.core.feature', {
 defineFeature(featureFile, test => {
   test('Starting game - All the cells should be hidden', ({ given, then }) => {
     given('the player opens the game', () => {
-      
+      steps.openTheGame()
     });
 
     then('all the cells should be covered', () => {

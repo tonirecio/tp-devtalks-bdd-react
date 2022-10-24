@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable jest/no-jasmine-globals */
 import { loadFeature, defineFeature } from 'jest-cucumber'
+import * as steps from './steps/minesweeper.steps.js'
 
 const featureFile = loadFeature('./src/features/minesweeper.edge.feature');
 
@@ -8,7 +9,7 @@ defineFeature(featureFile, test => {
 
   test('Tagging as mined a revelaed cell - No tagging allowed', ({ given, and, when, then }) => {
     given('the player opens the game', () => {
-
+      steps.openTheGame()
     });
 
     given('the player loads the following mock data:', (docString) => {
