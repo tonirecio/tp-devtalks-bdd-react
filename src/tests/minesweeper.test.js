@@ -1,9 +1,9 @@
-/* eslint-disable no-undef */
-/* eslint-disable jest/no-jasmine-globals */
 import { loadFeatures, autoBindSteps } from 'jest-cucumber'
 import * as steps from './steps/minesweeper.steps.js'
 
-const features = loadFeatures('./src/features/**/*.feature')
+const features = loadFeatures('./src/features/**/*.feature', {
+  tagFilter: '@wip and not @manual'
+});
   
 const stepsRef = ({ given, and, when, then }) => {
   given('the player opens the game', () => {

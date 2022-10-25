@@ -13,6 +13,7 @@ Scenario: Tagging as mined a revelaed cell - No tagging allowed
   When the player tags as "mined" the cell (2,2)
   Then the cell (2,2) should show: 1
 
+@wip
 Scenario: Tagging as mined a disabled cell - No tagging allowed
   Given the player loads the following mock data:
   """
